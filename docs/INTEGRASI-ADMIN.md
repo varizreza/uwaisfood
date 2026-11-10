@@ -1,48 +1,50 @@
-# Integrasi katalog dengan Admin Uwais Food
+# Integrasi CMS dengan Admin Uwais Food
 
-Website GitHub Pages bersifat statis. Karena itu, website tidak dapat membaca database internal Admin secara langsung. Admin perlu menyediakan **endpoint JSON publik khusus katalog** atau mengekspor katalog publik ke `data/products.json`.
+Website showcase mengambil konten publik dari CMS melalui Web App Google Apps Script Admin Uwais Food.
 
-## Kontrak JSON yang dibaca website
+## Prasyarat
+- Project Apps Script Admin yang aktif dan terhubung ke Spreadsheet Uwais Food.
+- Add-on `WebsiteCMS_Addon.gs` dari repository `varizreza/uwaisfood-cms`.
+- Patch dispatcher dan doGet pada file `apps-script/PATCH-INTEGRASI-CODEGS.md`.
+- Deployment Apps Script versi terbaru yang tetap memakai URL /exec yang sama.
 
-Website menerima salah satu bentuk berikut:
-
-```json
-{
-  "updatedAt": "2026-11-09T10:00:00+07:00",
-  "products": [
-    {
-      "id": "bolen-pisang-premium",
-      "name": "Bolen Pisang Premium",
-      "category": "pastry",
-      "categoryLabel": "Pastry",
-      "description": "Pisang keju dan cokelat.",
-      "price": 65000,
-      "priceLabel": "Rp65.000",
-      "unit": "10 pcs",
-      "tag": "FAVORIT",
-      "image": "https://alamat-gambar-publik/bolen.jpg",
-      "active": true
-    }
-  ]
-}
+## Menyiapkan URL publik
+Endpoint publik CMS memakai JSONP sehingga dapat dipanggil website GitHub Pages:
 ```
+https://script.google.com/macros/s/ID_DEPLOYMENT/exec?publicCatalog=1&callback=namaCallback
+```
+Untuk tes JSON biasa, buka:
+```
+https://script.google.com/macros/s/ID_DEPLOYMENT/exec?websiteCmsPublic=1
+```
+Endpoint hanya mengirim:
+- Konten website yang sudah dipublikasikan.
+- Nama, kategori, deskripsi, harga publik, gambar, label, dan status tampil produk dari sheet Menu.
 
-`products` juga boleh berupa array JSON langsung. Kategori yang digunakan filter adalah `pastry`, `cake`, dan `hampers`. Produk dengan `active: false` tidak ditampilkan.
+Endpoint tidak mengirim PIN/token, data pesanan, pelanggan, alamat/nomor pelanggan, data pembayaran, QRIS, atau pengaturan internal.
 
-## Mengaktifkan endpoint
-1. Admin Uwais Food perlu menyediakan URL JSON yang dapat dibaca publik tanpa login.
-2. Endpoint hanya boleh mengembalikan field katalog: nama produk, kategori, deskripsi, harga publik, URL foto, label, dan status tayang.
-3. Jangan mengembalikan nomor telepon pelanggan, alamat, pesanan, catatan internal, token, atau data sensitif lainnya.
-4. Pastikan URL dapat diakses dari browser dan mengizinkan request lintas domain (CORS) dari domain GitHub Pages.
-5. Masukkan URL tersebut pada `catalogUrl` di `config.js`.
+## Menghubungkan website
+1. Buka file `config.js` pada repository website.
+2. Isi `catalogUrl` dengan URL dasar deployment Apps Script yang berakhiran `/exec`, tanpa parameter query.
+3. Commit perubahan tersebut.
 
 Contoh:
 ```js
 catalogUrl: "https://script.google.com/macros/s/ID_DEPLOYMENT/exec"
 ```
 
-## Alternatif paling sederhana
-Jika aplikasi Admin belum memiliki endpoint, admin dapat mengekspor atau memperbarui `data/products.json` di repository GitHub. Website akan membaca file tersebut saat halaman dimuat.
+Website akan memanggil `?publicCatalog=1&callback=...` dan menerapkan data konten CMS saat endpoint merespons. Jika endpoint belum tersedia atau gagal, katalog lokal `data/products.json` tetap digunakan sebagai fallback.
 
-## Penting untuk proyek Uwais Food
-Alamat Admin saat ini adalah `https://admin.uwaisfood.my.id/`. Website showcase ini tidak mengakses atau mengubah halaman admin tersebut. Integrasi otomatis baru aktif setelah endpoint katalog publik disiapkan dan diuji. Jangan mengarahkan pengunjung website publik ke URL admin.
+## Pemetaan sumber produk
+- Sheet `Menu` kolom Nama → nama produk.
+- Kolom Harga → harga produk.
+- Kolom Isi → deskripsi.
+- Kolom GambarURL → URL foto.
+- CMS menyimpan pengaturan tayang, unggulan, label, dan urutan secara terpisah pada sheet `WebsiteCMS`; master Menu tidak diubah.
+
+## Pemecahan masalah
+- Respons 404 / bukan JSONP: pastikan patch doGet sudah dipasang dan deployment Apps Script sudah diperbarui.
+- Login CMS gagal dengan aksi tidak dikenal: pastikan lima action CMS didaftarkan pada objek `fns` di `api_()`.
+- Draft tidak tersimpan: pastikan CMS memakai URL /exec yang sama dengan Admin dan token belum kedaluwarsa.
+- Foto tidak tampil: pastikan Drive mengizinkan berbagi file dengan Anyone with the link.
+- Katalog masih statis: cek nilai `catalogUrl` di `config.js` dan uji endpoint publik secara langsung.
