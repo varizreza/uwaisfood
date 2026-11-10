@@ -13,6 +13,6 @@ window.UWAIS_CONFIG = {
   // Setelah addon WebsiteCMS dipasang dan Apps Script di-deploy, isi URL dasar /exec.
   // Contoh: https://script.google.com/macros/s/ID_DEPLOYMENT/exec
   // Kosongkan untuk tetap memakai katalog statis data/products.json.
-  catalogUrl: "",
+  catalogUrl: "https://script.google.com/macros/s/AKfycbwWcnvTcBJzY4SXIxKY30sPXj31oNapu-nIYPnQWDplQOOb5Xvb8WvT3vcZwGDhVOBpFw/exec",
   currency: "IDR"
 };
