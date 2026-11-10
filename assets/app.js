@@ -89,6 +89,7 @@
     const ah=$('#profileTitle');if(ah&&profile.title)ah.innerHTML=headlineMarkup(profile.title);
     setText('profileDescription',profile.description);
     setText('profileLocation',profile.location);
+    const hours=$('#profileOpeningHours');if(hours){hours.hidden=!profile.openingHours;hours.textContent=profile.openingHours?'Jam operasional: '+profile.openingHours:'';}
     setText('profileQuote',profile.quote);
     setText('profileQuoteAuthor','— '+(profile.quoteAuthor||'Uwais Food'));
     if(contact.whatsapp){const wa=$('#whatsappLink');if(wa)wa.href='https://wa.me/'+whatsappNumber()+'?text='+encodeURIComponent(whatsappBaseMessage());}
