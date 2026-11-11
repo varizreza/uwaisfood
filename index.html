@@ -44,7 +44,7 @@
   </header>
   <main>
     <section class="hero page-shell" id="home">
-      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span><span id="heroEyebrow">SMALL BATCH · BIG HEART</span></div><p class="hero-kicker">Homemade bakery from Tanjungpinang</p><h1 id="heroTitle">Bahagia dimulai dari <em id="heroAccent">gigitan pertama.</em></h1><p class="hero-description" id="heroDescription">Racikan homemade dengan rasa istimewa, dibuat penuh perhatian untuk menemani hari dan momen spesialmu.</p><div class="hero-actions"><a class="button button-primary" id="heroOrder" href="#produk">Temukan favoritmu ↗</a><a class="button button-outline" href="#cerita">Cerita Uwais Food ↓</a></div><div class="hero-trust"><span class="trust-icon">✳</span><div><strong>Made with care, shared with joy</strong><small>Untuk momen sederhana maupun istimewa.</small></div></div></div>
+      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span><span id="heroEyebrow">SMALL BATCH · BIG HEART</span></div><p class="hero-kicker">Homemade bakery from Tanjungpinang</p><h1><span id="heroTitle">Bahagia dimulai dari </span><em id="heroAccent">gigitan pertama.</em></h1><p class="hero-description" id="heroDescription">Racikan homemade dengan rasa istimewa, dibuat penuh perhatian untuk menemani hari dan momen spesialmu.</p><div class="hero-actions"><a class="button button-primary" id="heroOrder" href="#produk">Temukan favoritmu ↗</a><a class="button button-outline" href="#cerita">Cerita Uwais Food ↓</a></div><div class="hero-trust"><span class="trust-icon">✳</span><div><strong>Made with care, shared with joy</strong><small>Untuk momen sederhana maupun istimewa.</small></div></div></div>
       <div class="hero-art"><div class="hero-photo"><img id="heroImage" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=88" alt="Pilihan bakery Uwais Food" fetchpriority="high"></div><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div><div class="hero-note note-fresh"><span>✦</span><div><b>Freshly made</b><small>Hangat dari dapur kami</small></div></div><div class="hero-note note-love"><span>♡</span><div><b>Homemade goodness</b><small>Detail kecil, rasa istimewa</small></div></div><div class="hero-sticker">UWAIS<br><b>FOOD</b><small>MADE WITH LOVE</small></div></div>
       <div class="hero-bottom"><span>01 / HOMEMADE STORIES</span><span class="scroll-cue">SCROLL TO EXPLORE <i></i></span></div>
     </section>
@@ -118,7 +118,7 @@
       settings=s||{};
       setText('#announcementText',settings.announcement);
       setText('#heroEyebrow',settings.heroEyebrow);
-      setText('#heroTitle',settings.heroTitle);
+      if(settings.heroTitle)$('#heroTitle').textContent=settings.heroTitle+' ';
       setText('#heroAccent',settings.heroAccent);
       setText('#heroDescription',settings.heroDescription);
       setText('#aboutTitle',settings.aboutTitle);
