@@ -3,132 +3,160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f4ee">
-  <meta id="seoDescription" name="description" content="Uwais Food — homemade bakery dengan cita rasa istimewa. Temukan bolen pisang, banana milk cheese, cheesecake, dan hampers premium.">
-  <link rel="canonical" href="https://uwaisfood.my.id/">
-  <meta id="seoOgTitle" property="og:title" content="Uwais Food — Homemade with Love">
-  <meta id="seoOgDescription" property="og:description" content="Temukan pilihan bakery homemade favorit dari Uwais Food.">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="Uwais Food — homemade bakery dan hampers spesial dari Tanjungpinang.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://uwaisfood.my.id/">
-  <meta id="seoOgImage" property="og:image" content="">
-  <title id="seoTitle">Uwais Food — Homemade with Love</title>
+  <meta property="og:title" content="Uwais Food | Homemade Bakery">
+  <meta property="og:description" content="Homemade goodness, made with love.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85">
+  <title>Uwais Food | Homemade Bakery & Hampers</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <script src="/config.js"></script>
-  <script defer src="/assets/app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="config.js"></script>
+  <style>
+    :root{--bg:#f6f3eb;--surface:#fffdf8;--ink:#303b32;--muted:#72786e;--olive:#68785c;--olive-dark:#46543f;--accent:#d99a70;--line:#e8e2d7;--shadow:0 22px 60px rgba(58,55,43,.10);--radius:26px;color-scheme:light}
+    :root[data-theme=dark]{--bg:#1b211d;--surface:#252d27;--ink:#f2eee4;--muted:#b4b7ab;--olive:#9aac83;--olive-dark:#a9bc91;--accent:#e4a77e;--line:#3b453d;--shadow:0 22px 60px rgba(0,0,0,.24);color-scheme:dark}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;transition:background .25s,color .25s}a{color:inherit;text-decoration:none}button{font:inherit}.page-shell{width:min(1160px,calc(100% - 56px));margin-inline:auto}
+    .announcement{height:36px;padding:0 5vw;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--olive-dark);color:#fff;font-size:10px;letter-spacing:.08em}.announcement a{margin-left:auto;text-decoration:underline;text-underline-offset:3px}.live-dot{width:7px;height:7px;border-radius:50%;background:#d9bd83;box-shadow:0 0 0 4px #ffffff20}
+    .site-header{height:82px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 max(28px,calc((100vw - 1160px)/2));background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;min-width:185px}.brand-symbol{width:42px;height:42px;border-radius:15px;background:var(--olive-dark);color:#fff;display:grid;place-items:center;font:800 19px Manrope;letter-spacing:-3px}.brand-symbol i{color:#e7ad84;font-style:normal}.brand-name strong{display:block;font:800 18px Manrope;letter-spacing:-.8px}.brand-name small{display:block;margin-top:2px;font-size:7px;letter-spacing:.23em;color:var(--muted)}.nav-links{display:flex;align-items:center;gap:30px}.nav-link{font-size:12px;font-weight:700;color:var(--muted);transition:.2s}.nav-link:hover,.nav-link.active{color:var(--olive-dark)}.header-actions{display:flex;align-items:center;gap:12px}.theme-toggle,.menu-toggle{width:39px;height:39px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--ink);cursor:pointer}.theme-toggle{font-size:18px}.button{min-height:46px;padding:0 21px;display:inline-flex;align-items:center;justify-content:center;gap:13px;border-radius:100px;border:1px solid transparent;font-size:11px;font-weight:800;transition:transform .2s,background .2s;cursor:pointer}.button:hover{transform:translateY(-2px)}.button-dark{background:var(--ink);color:var(--bg)}.button-primary{background:var(--olive-dark);color:#fff}.button-outline{border-color:var(--line);color:var(--ink);background:transparent}.button-light{background:#fffaf1;color:#394438}.button span{font-size:15px}.menu-toggle{display:none}
+    .hero{min-height:610px;padding-top:64px;padding-bottom:56px;display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:45px;position:relative}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--olive-dark);font-size:9px;font-weight:800;letter-spacing:.22em}.eyebrow-line{width:29px;height:1px;background:var(--accent)}.hero-kicker,.story-overline{margin:25px 0 7px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.hero h1{max-width:620px;margin:0;font:800 clamp(48px,6.3vw,78px)/.99 Manrope;letter-spacing:-.065em}.hero h1 em,.section-top h2 em,.story-copy h2 em,.location-copy h2 em,.contact-copy h2 em{font-family:Georgia,serif;font-weight:500;color:var(--olive);letter-spacing:-.06em}.hero-description{max-width:465px;margin:22px 0 26px;color:var(--muted);font-size:14px;line-height:1.9}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.hero-trust{display:flex;align-items:center;gap:12px;margin-top:36px}.trust-icon{width:37px;height:37px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-size:18px}.hero-trust strong,.hero-trust small{display:block}.hero-trust strong{font-size:10px}.hero-trust small{margin-top:3px;font-size:9px;color:var(--muted)}
+    .hero-art{height:470px;position:relative;display:grid;place-items:center}.hero-photo{width:76%;height:91%;overflow:hidden;border-radius:47% 47% 18px 18px;transform:rotate(2deg);box-shadow:var(--shadow);background:var(--line)}.hero-photo img{width:100%;height:100%;object-fit:cover}.hero-orbit{position:absolute;border:1px solid var(--accent);border-radius:50%;opacity:.5;pointer-events:none}.orbit-a{width:92%;height:85%;transform:rotate(-16deg)}.orbit-b{width:80%;height:96%;transform:rotate(23deg);border-color:var(--olive)}.hero-note{position:absolute;z-index:2;padding:13px 17px;display:flex;align-items:center;gap:10px;border-radius:15px;background:var(--surface);box-shadow:var(--shadow)}.hero-note>span{color:var(--accent);font-size:22px}.hero-note b,.hero-note small{display:block}.hero-note b{font-size:10px}.hero-note small{margin-top:3px;color:var(--muted);font-size:8px}.note-fresh{left:0;top:19%}.note-love{right:-1%;bottom:16%}.hero-sticker{position:absolute;right:4%;top:3%;width:83px;height:83px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--accent);color:#fff;font-size:10px;line-height:1.15;transform:rotate(10deg)}.hero-sticker b{font-size:17px}.hero-sticker small{font-size:6px;letter-spacing:.13em;margin-top:4px}.hero-bottom{position:absolute;bottom:18px;left:0;right:0;display:flex;justify-content:space-between;color:var(--muted);font-size:8px;letter-spacing:.16em}.scroll-cue{display:flex;align-items:center;gap:10px}.scroll-cue i{width:34px;height:1px;background:var(--accent)}
+    .value-strip{overflow:hidden;padding:19px 0;background:var(--olive-dark);color:#f7f1e5}.value-track{width:max-content;display:flex;align-items:center;gap:34px;animation:marquee 35s linear infinite;font-size:10px;font-weight:800;letter-spacing:.19em}.value-track b{color:var(--accent)}@keyframes marquee{to{transform:translateX(-50%)}}
+    .products-section{padding-top:112px;padding-bottom:105px}.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:37px}.section-top h2,.story-copy h2,.location-copy h2,.contact-copy h2{margin:13px 0 0;font:800 clamp(37px,4vw,54px)/1.06 Manrope;letter-spacing:-.06em}.section-top>p{max-width:330px;margin:0 0 7px;color:var(--muted);font-size:12px;line-height:1.8}.catalog-tools{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:19px}.filter-list{display:flex;gap:7px;flex-wrap:wrap}.filter-chip{padding:10px 16px;border:1px solid var(--line);border-radius:40px;background:transparent;color:var(--muted);font-size:10px;font-weight:700;cursor:pointer}.filter-chip.selected{background:var(--olive-dark);border-color:var(--olive-dark);color:#fff}.product-count{font-size:9px;color:var(--muted)}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.product-card{min-width:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface);transition:transform .25s,box-shadow .25s}.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.product-image{height:205px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e9e0d1,#d2c3a9);display:grid;place-items:center}.product-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.product-card:hover .product-image img{transform:scale(1.06)}.product-image.placeholder:after{content:"UWAIS FOOD";font:800 12px Manrope;letter-spacing:.2em;color:#fff9}.product-tag{position:absolute;top:12px;left:12px;padding:7px 10px;border-radius:30px;background:#fff8ed;color:#536348;font-size:7px;font-weight:800;letter-spacing:.1em}.product-info{padding:17px 17px 16px}.product-category{font-size:7px;font-weight:800;letter-spacing:.18em;color:var(--accent)}.product-info h3{min-height:42px;margin:9px 0 7px;font:800 15px/1.35 Manrope;letter-spacing:-.03em}.product-info p{min-height:54px;margin:0;color:var(--muted);font-size:9px;line-height:1.7}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}.product-bottom strong{font-size:11px}.product-bottom small{font-size:8px;color:var(--muted);font-weight:500}.product-action{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--olive-dark);color:#fff;font-size:15px}.loading-card{grid-column:1/-1;padding:38px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted);font-size:12px}.catalog-footnote{margin:19px 0 0;color:var(--muted);font-size:9px}.catalog-footnote span{color:var(--accent)}
+    .story-band{padding:92px 0;background:var(--surface);border-block:1px solid var(--line)}.story-grid{display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:85px}.story-image{height:430px;position:relative}.story-image img{width:100%;height:100%;object-fit:cover;border-radius:45% 45% 18px 18px}.image-caption{position:absolute;bottom:17px;left:18px;padding:10px 13px;background:var(--surface);border-radius:40px;font-size:8px;font-weight:800;letter-spacing:.15em}.story-copy h2{font-size:clamp(38px,4vw,53px)}.story-copy>p:not(.story-overline){max-width:490px;margin:20px 0;color:var(--muted);font-size:12px;line-height:1.95}.text-arrow{display:inline-flex;gap:12px;margin-top:9px;color:var(--olive-dark);font-size:11px;font-weight:800}
+    .gallery-section{padding-top:100px;padding-bottom:100px}.section-top.compact{margin-bottom:31px}.gallery-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px}.gallery-tile{height:245px;margin:0;border-radius:17px;overflow:hidden;background:var(--line)}.gallery-tall{height:315px;grid-row:span 2}.gallery-tile img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.gallery-tile:hover img{transform:scale(1.05)}
+    .location-section{padding:90px 0;background:color-mix(in srgb,var(--olive) 9%,var(--bg))}.location-grid{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:65px}.location-copy h2{font-size:clamp(40px,4vw,54px)}.location-copy>p{max-width:420px;color:var(--muted);font-size:12px;line-height:1.9}.location-detail{display:flex;align-items:center;gap:13px;margin-top:21px}.detail-icon{width:39px;height:39px;border-radius:13px;background:var(--surface);display:grid;place-items:center;color:var(--accent);font-size:18px}.location-detail small,.location-detail strong{display:block}.location-detail small{font-size:7px;letter-spacing:.16em;color:var(--muted);margin-bottom:4px}.location-detail strong{font-size:10px}.location-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.map-card{padding:13px;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.map-topline,.map-card-footer{display:flex;align-items:center;justify-content:space-between;padding:9px 8px;font-size:8px;font-weight:800;letter-spacing:.12em}.map-live-label{color:var(--muted);font-size:7px}.map-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#8ca77b;margin-right:5px}.map-frame{height:315px;overflow:hidden;border-radius:14px;background:linear-gradient(135deg,#e9e3d6,#d4d9c8)}.map-frame iframe{width:100%;height:100%;border:0;filter:saturate(.8)}.map-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;color:#536348}.map-pin-large{font-size:35px;color:#839571}.map-empty strong{margin-top:6px;font:800 19px Manrope}.map-empty p{max-width:290px;font-size:10px;line-height:1.7}.map-empty a{font-size:10px;font-weight:800;text-decoration:underline}.map-card-footer{color:var(--muted);letter-spacing:0}
+    .contact-section{padding:80px 0;background:var(--olive-dark);color:#fff;overflow:hidden}.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative}.contact-copy{position:relative;z-index:1}.eyebrow-light{color:#eee6d7}.contact-copy h2{font-size:clamp(42px,4.5vw,60px)}.contact-copy h2 em{color:#e8b28b}.contact-copy>p{max-width:400px;color:#d5ddce;font-size:11px;line-height:1.8}.contact-links{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:15px}.social-link{font-size:10px;color:#e2e7dd}.contact-orb{position:absolute;right:22%;top:-210px;width:390px;height:390px;border:1px solid #ffffff25;border-radius:50%;box-shadow:0 0 0 40px #ffffff08,0 0 0 85px #ffffff05}
+    .site-footer{width:min(1160px,calc(100% - 56px));margin:auto;min-height:105px;display:flex;align-items:center;justify-content:space-between;gap:18px}.site-footer p{color:var(--muted);font-size:9px}.footer-right{display:flex;gap:22px;color:var(--muted);font-size:9px}.floating-order{position:fixed;right:22px;bottom:20px;z-index:18;display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:40px;background:var(--olive-dark);color:white;box-shadow:0 9px 28px #0003;font-size:10px}.floating-order span{font-size:15px;color:#e6b08a}.toast{position:fixed;left:50%;bottom:28px;z-index:40;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:12px 18px;border-radius:50px;background:var(--ink);color:var(--bg);font-size:10px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:980px){.nav-links{gap:16px}.brand{min-width:155px}.hero{gap:20px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.story-grid{gap:42px}.location-grid{gap:30px}}
+    @media(max-width:700px){html{scroll-padding-top:76px}.page-shell{width:calc(100% - 34px)}.announcement{height:32px;font-size:8px;padding-inline:12px}.announcement a{display:none}.site-header{height:70px;padding:0 17px}.brand{min-width:auto}.brand-symbol{width:37px;height:37px}.brand-name strong{font-size:16px}.nav-links{display:none;position:absolute;top:69px;left:0;right:0;padding:23px 22px 25px;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:21px}.menu-open .nav-links{display:flex}.header-actions{gap:8px}.button-header{display:none}.theme-toggle{width:35px;height:35px}.menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:35px;height:35px}.menu-toggle span{width:14px;height:1.5px;background:var(--ink)}.hero{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding-top:45px;padding-bottom:55px}.hero h1{font-size:clamp(48px,13vw,68px)}.hero-description{font-size:12px}.hero-art{height:345px;margin:10px 5px 0}.hero-photo{width:73%;height:92%}.note-fresh{left:-2%;top:18%}.note-love{right:-2%;bottom:11%}.hero-note{padding:10px 12px}.hero-note b{font-size:9px}.hero-note small{font-size:7px}.hero-sticker{width:68px;height:68px;font-size:8px}.hero-sticker b{font-size:14px}.hero-bottom{bottom:12px;font-size:7px}.products-section,.gallery-section{padding-top:76px;padding-bottom:75px}.section-top{display:block;margin-bottom:25px}.section-top h2,.story-copy h2{font-size:42px}.section-top>p{margin-top:14px;font-size:11px}.catalog-tools{display:block}.filter-list{gap:6px}.filter-chip{padding:9px 12px;font-size:9px}.product-count{display:block;margin-top:12px}.product-grid{gap:10px}.product-image{height:155px}.product-info{padding:12px 11px}.product-info h3{font-size:12px;min-height:36px}.product-info p{font-size:8px;min-height:52px}.product-bottom strong{font-size:9px}.story-band{padding:70px 0}.story-grid{display:flex;flex-direction:column;gap:30px}.story-image{width:85%;height:290px;align-self:flex-start}.story-copy h2{font-size:40px}.story-copy>p:not(.story-overline){font-size:11px}.gallery-grid{grid-template-columns:1fr 1fr;gap:9px}.gallery-tile{height:145px}.gallery-tall{height:299px;grid-row:span 2}.location-section{padding:70px 0}.location-grid{grid-template-columns:1fr;gap:30px}.location-copy h2{font-size:43px}.map-frame{height:255px}.contact-section{padding:65px 0}.contact-inner{display:block}.contact-copy h2{font-size:47px}.contact-links{margin-top:28px}.contact-orb{right:-20%;top:-80px;width:260px;height:260px}.site-footer{width:calc(100% - 34px);padding:25px 0;display:grid;grid-template-columns:1fr auto}.site-footer p{grid-column:1/-1;grid-row:2;margin:0}.footer-right{display:flex;flex-direction:column;gap:7px;align-items:flex-end}.floating-order{right:13px;bottom:13px;padding:10px 15px}.toast{width:max-content;max-width:90%;text-align:center}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
 </head>
 <body>
-  <div class="announcement">
-    <span class="announcement-dot"></span>
-    <span id="announcementText">Homemade with love, freshly made for you</span>
-    <span class="announcement-right" id="announcementLocation">Uwais Food · Tanjungpinang</span>
-  </div>
-
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Uwais Food beranda">
-      <span class="brand-mark">U<span>F</span></span>
-      <span class="brand-copy"><strong>uwais food</strong><small>HOMEMADE GOODNESS</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="Navigasi utama">
-      <a href="#home" class="nav-link active">Beranda</a>
-      <a href="#produk" class="nav-link">Produk</a>
-      <a href="#tentang" class="nav-link">Tentang Kami</a>
-      <a href="#kontak" class="nav-link">Kontak</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-button" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">
-        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-      </button>
-      <a class="button button-small button-primary header-cta" href="https://order.uwaisfood.my.id/">Pesan Sekarang <span>↗</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu"><span></span><span></span></button>
-    </div>
+  <div class="announcement"><span class="live-dot"></span><span id="announcementText">Freshly made, with love — Uwais Food</span><a href="#produk">Jelajahi menu ↗</a></div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Uwais Food beranda"><span class="brand-symbol"><b>U</b><i>F</i></span><span class="brand-name"><strong>uwais food</strong><small>HOMEMADE GOODNESS</small></span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama"><a class="nav-link active" href="#home">Beranda</a><a class="nav-link" href="#produk">Menu</a><a class="nav-link" href="#cerita">Cerita Kami</a><a class="nav-link" href="#lokasi">Lokasi</a><a class="nav-link" href="#kontak">Kontak</a></nav>
+    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">☼</button><a class="button button-dark button-header" id="headerOrder" href="#produk">Pesan sekarang ↗</a><button class="menu-toggle" id="menuToggle" aria-label="Buka navigasi" aria-expanded="false"><span></span><span></span></button></div>
   </header>
-
   <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-line"></span> BAKED FRESH, MADE WITH LOVE</div>
-        <h1 id="heroHeadline">Bahagia itu<br><span>sesederhana</span><br>gigitan pertama.</h1>
-        <p class="hero-description" id="heroDescription">Temukan kelezatan bakery homemade dengan bahan pilihan, rasa istimewa, dan sentuhan hangat di setiap sajian.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" id="heroPrimaryButton" href="#produk">Jelajahi Produk <span>↗</span></a>
-          <a class="text-link" id="heroSecondaryButton" href="#tentang">Kenali Uwais Food <span>→</span></a>
-        </div>
-        <div class="hero-proof">
-          <div class="proof-avatars"><i>♡</i><i>✦</i><i>U</i></div>
-          <div><strong>Dibuat dengan sepenuh hati</strong><small>Untuk momen spesial setiap hari</small></div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-image-frame">
-          <img id="heroImage" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1100&q=85" alt="Aneka roti dan pastry freshly baked" fetchpriority="high">
-        </div>
-        <div class="floating-note note-top"><span class="note-icon">✦</span><span><strong>Freshly made</strong><small>Rasa yang selalu dirindukan</small></span></div>
-        <div class="floating-note note-bottom"><span class="note-spark">♡</span><span><strong>Homemade goodness</strong><small>Made with love, always</small></span></div>
-        <div class="hero-stamp">UWAIS<br><b>FOOD</b><small>EST. WITH LOVE</small></div>
-      </div>
-      <div class="hero-scroll"><span></span> SCROLL TO DISCOVER</div>
+    <section class="hero page-shell" id="home">
+      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span><span id="heroEyebrow">SMALL BATCH · BIG HEART</span></div><p class="hero-kicker">Homemade bakery from Tanjungpinang</p><h1 id="heroTitle">Bahagia dimulai dari <em id="heroAccent">gigitan pertama.</em></h1><p class="hero-description" id="heroDescription">Racikan homemade dengan rasa istimewa, dibuat penuh perhatian untuk menemani hari dan momen spesialmu.</p><div class="hero-actions"><a class="button button-primary" id="heroOrder" href="#produk">Temukan favoritmu ↗</a><a class="button button-outline" href="#cerita">Cerita Uwais Food ↓</a></div><div class="hero-trust"><span class="trust-icon">✳</span><div><strong>Made with care, shared with joy</strong><small>Untuk momen sederhana maupun istimewa.</small></div></div></div>
+      <div class="hero-art"><div class="hero-photo"><img id="heroImage" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=88" alt="Pilihan bakery Uwais Food" fetchpriority="high"></div><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div><div class="hero-note note-fresh"><span>✦</span><div><b>Freshly made</b><small>Hangat dari dapur kami</small></div></div><div class="hero-note note-love"><span>♡</span><div><b>Homemade goodness</b><small>Detail kecil, rasa istimewa</small></div></div><div class="hero-sticker">UWAIS<br><b>FOOD</b><small>MADE WITH LOVE</small></div></div>
+      <div class="hero-bottom"><span>01 / HOMEMADE STORIES</span><span class="scroll-cue">SCROLL TO EXPLORE <i></i></span></div>
     </section>
-
-    <section class="ticker" aria-label="Keunggulan Uwais Food">
-      <div class="ticker-track"><span>♡ HOMEMADE</span><b>✳</b><span>FRESHLY MADE</span><b>✳</b><span>QUALITY INGREDIENTS</span><b>✳</b><span>MADE WITH LOVE</span><b>✳</b><span>HOMEMADE</span><b>✳</b><span>FRESHLY MADE</span><b>✳</b><span>QUALITY INGREDIENTS</span><b>✳</b><span>MADE WITH LOVE</span><b>✳</b></div>
-    </section>
-
-    <section class="products-section section-wrap" id="produk">
-      <div class="section-heading">
-        <div><div class="eyebrow"><span class="eyebrow-line"></span> OUR FAVORITES</div><h2>Temukan favorit<br><span>barumu.</span></h2></div>
-        <p id="productsIntro">Dari camilan teman santai hingga hantaran penuh makna, selalu ada yang spesial untuk setiap momen.</p>
-      </div>
-      <div class="product-toolbar">
-        <div class="filter-list" id="productFilters">
-          <button class="filter-chip selected" data-filter="all">Semua</button>
-          <button class="filter-chip" data-filter="pastry">Pastry</button>
-          <button class="filter-chip" data-filter="cake">Cake & Dessert</button>
-          <button class="filter-chip" data-filter="hampers">Hampers</button>
-        </div>
-        <span class="product-count" id="productCount">4 produk</span>
-      </div>
-      <div class="product-grid" id="productGrid" aria-live="polite">
-        <article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484e9?auto=format&fit=crop&w=800&q=80" alt="Banana Milk Cheese"><span class="product-tag">BEST SELLER</span></div><div class="product-info"><span class="product-category">PASTRY</span><h3>Banana Milk Cheese</h3><p>Perpaduan pisang, susu, dan keju yang lembut.</p><div class="product-bottom"><strong>Rp50.000 <small>/ 6 pcs</small></strong><a href="#kontak" aria-label="Tanya Banana Milk Cheese">↗</a></div></div></article>
-        <article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=800&q=80" alt="Bolen Pisang Premium"><span class="product-tag">FAVORIT</span></div><div class="product-info"><span class="product-category">PASTRY</span><h3>Bolen Pisang Premium</h3><p>Pastry berlapis dengan pilihan pisang keju dan cokelat.</p><div class="product-bottom"><strong>Rp65.000 <small>/ 10 pcs</small></strong><a href="#kontak" aria-label="Tanya Bolen Pisang Premium">↗</a></div></div></article>
-        <article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Iceberg Cheese Cake"></div><div class="product-info"><span class="product-category">CAKE & DESSERT</span><h3>Iceberg Cheese Cake</h3><p>Cheesecake creamy dengan sensasi rasa yang istimewa.</p><div class="product-bottom"><strong>Rp40.000 <small>/ slice</small></strong><a href="#kontak" aria-label="Tanya Iceberg Cheese Cake">↗</a></div></div></article>
-        <article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80" alt="Hampers Uwais Food"><span class="product-tag">SPECIAL GIFT</span></div><div class="product-info"><span class="product-category">HAMPERS</span><h3>Hampers Premium</h3><p>Paket bolen premium dengan box dan kartu ucapan.</p><div class="product-bottom"><strong>Hubungi kami <small>/ custom</small></strong><a href="#kontak" aria-label="Tanya Hampers Premium">↗</a></div></div></article>
-      </div>
-      <p class="catalog-note"><span>✦</span> <span id="catalogNoteText">Ketersediaan produk dan harga dapat berubah. Silakan konfirmasi sebelum memesan.</span></p>
-    </section>
-
-    <section class="feature-band">
-      <div class="feature-inner section-wrap">
-        <div class="feature-image"><img id="promoImage" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=85" alt="Pastry freshly baked"></div>
-        <div class="feature-copy"><div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE MORE LOVE</div><h2 id="promoTitle">Bukan sekadar<br>rasa, tapi juga<br><span>cerita.</span></h2><p id="promoDescription">Kami percaya hal sederhana bisa menjadi istimewa. Karena itu, setiap produk Uwais Food dibuat dengan perhatian pada rasa, kualitas, dan detail kecil yang membuat hari lebih menyenangkan.</p><a class="button button-dark" id="promoButton" href="#tentang">Cerita Kami <span>↗</span></a></div>
-        <div class="feature-decoration">GOOD<br>FOOD<br><i>GOOD</i><br>MOOD.</div>
-      </div>
-    </section>
-
-    <section class="gallery-section section-wrap" id="gallerySection" hidden><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> MOMENTS & GALLERY</div><h2>Galeri <span>Uwais Food.</span></h2></div><p>Potongan momen manis dari dapur kami.</p></div><div class="gallery-grid" id="galleryGrid"></div></section>
-
-    <section class="about-section section-wrap" id="tentang">
-      <div class="about-copy"><div class="eyebrow"><span class="eyebrow-line"></span> ABOUT UWAIS FOOD</div><h2 id="profileTitle">Hangatnya homemade,<br><span>istimewanya setiap momen.</span></h2><p id="profileDescription">Uwais Food hadir untuk menemani momen kecil maupun spesial melalui sajian bakery homemade. Kami ingin setiap gigitan membawa rasa nyaman, bahagia, dan kehangatan.</p><p class="about-location"><span>⌖</span> <span id="profileLocation">Tanjungpinang, Kepulauan Riau</span></p>
-      <p class="about-location" id="profileOpeningHours" hidden>Jam operasional</p></div>
-      <div class="about-quote"><span class="quote-mark">“</span><p id="profileQuote">Setiap sajian punya cerita. Kami senang bisa menjadi bagian dari ceritamu.</p><span class="quote-sign" id="profileQuoteAuthor">— Uwais Food</span></div>
-    </section>
-
-    <section class="contact-section" id="kontak">
-      <div class="contact-inner section-wrap">
-        <div><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> LET'S CONNECT</div><h2 id="contactTitle">Ada yang ingin<br><span>kamu nikmati?</span></h2><p id="contactDescription">Hubungi kami untuk informasi produk, pemesanan, atau hampers spesial.</p></div>
-        <div class="contact-actions"><a class="button button-light" href="https://order.uwaisfood.my.id/">Pesan Sekarang <span>↗</span></a><a class="button button-light" id="whatsappLink" href="#" target="_blank" rel="noopener">Chat via WhatsApp <span>↗</span></a><a class="contact-social" id="instagramLink" href="https://www.instagram.com/uwaisfood_id/" target="_blank" rel="noopener">Instagram @uwaisfood_id ↗</a></div>
-        <div class="contact-orbit orbit-one"></div><div class="contact-orbit orbit-two"></div>
-      </div>
-    </section>
+    <section class="value-strip"><div class="value-track"><span>✳ HOMEMADE</span><b>✦</b><span>FRESHLY MADE</span><b>✦</b><span>THOUGHTFUL DETAILS</span><b>✦</b><span>MADE WITH LOVE</span><b>✦</b><span>HOMEMADE</span><b>✦</b><span>FRESHLY MADE</span><b>✦</b><span>THOUGHTFUL DETAILS</span><b>✦</b></div></section>
+    <section class="products-section page-shell" id="produk"><div class="section-top"><div><div class="eyebrow"><span class="eyebrow-line"></span> OUR LITTLE TREATS</div><h2>Yang enak selalu<br><em>punya cerita.</em></h2></div><p>Temukan teman minum teh, suguhan keluarga, hingga bingkisan untuk orang tersayang.</p></div><div class="catalog-tools"><div class="filter-list" id="productFilters"><button class="filter-chip selected" data-filter="all">Semua menu</button><button class="filter-chip" data-filter="pastry">Pastry</button><button class="filter-chip" data-filter="cake">Cake & Dessert</button><button class="filter-chip" data-filter="hampers">Hampers</button></div><span id="productCount" class="product-count">Memuat menu…</span></div><div class="product-grid" id="productGrid" aria-live="polite"><div class="loading-card">Menyiapkan pilihan terbaik untukmu…</div></div><p class="catalog-footnote"><span>✳</span> Harga dan ketersediaan dapat berubah mengikuti produksi. Silakan konfirmasi sebelum memesan.</p></section>
+    <section class="story-band" id="cerita"><div class="story-grid page-shell"><div class="story-image"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1100&q=85" alt="Pastry homemade" loading="lazy"><span class="image-caption">A LITTLE JOY IN EVERY BITE</span></div><div class="story-copy"><div class="eyebrow"><span class="eyebrow-line"></span> A NOTE FROM OUR KITCHEN</div><p class="story-overline">The Uwais Food story</p><h2 id="aboutTitle">Bukan sekadar rasa,<br><em>ada hangat di dalamnya.</em></h2><p id="aboutText">Kami percaya kebahagiaan sering hadir lewat hal sederhana. Dari dapur Uwais Food, setiap sajian disiapkan dengan perhatian pada rasa, kualitas, dan detail kecil yang membuat momen terasa lebih dekat.</p><a class="text-arrow" href="#lokasi">Temukan kami ↗</a></div></div></section>
+    <section class="gallery-section page-shell" id="galeri"><div class="section-top compact"><div><div class="eyebrow"><span class="eyebrow-line"></span> THE LITTLE DETAILS</div><h2>Disiapkan dengan<br><em>sepenuh hati.</em></h2></div><p>Setiap pesanan membawa cerita kecil dari dapur kami ke momen spesialmu.</p></div><div class="gallery-grid" id="galleryGrid"><figure class="gallery-tile gallery-tall"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484e9?auto=format&fit=crop&w=900&q=85" alt="Bakery pilihan" loading="lazy"></figure><figure class="gallery-tile"><img src="https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=85" alt="Pastry homemade" loading="lazy"></figure><figure class="gallery-tile"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85" alt="Gift dan hampers" loading="lazy"></figure></div></section>
+    <section class="location-section" id="lokasi"><div class="location-grid page-shell"><div class="location-copy"><div class="eyebrow"><span class="eyebrow-line"></span> COME SAY HELLO</div><h2>Mampir atau<br><em>temukan kami.</em></h2><p id="locationIntro">Kami berada di Tanjungpinang, Kepulauan Riau. Lihat lokasi dan hubungi kami sebelum berkunjung atau mengambil pesanan.</p><div class="location-detail"><span class="detail-icon">⌖</span><div><small>ALAMAT UWAIS FOOD</small><strong id="storeAddress">Tanjungpinang, Kepulauan Riau</strong></div></div><div class="location-detail"><span class="detail-icon">◷</span><div><small>JAM PELAYANAN</small><strong id="storeHours">Hubungi kami untuk informasi jam pelayanan.</strong></div></div><div class="location-actions"><a class="button button-primary" id="mapsDirection" href="https://www.google.com/maps/search/?api=1&query=Uwais%20Food%20Tanjungpinang" target="_blank" rel="noopener">Petunjuk arah ↗</a><button class="button button-outline" id="copyAddress" type="button">Salin alamat ⧉</button></div><p class="map-note" id="mapNote">Pin lokasi yang tepat dapat diatur melalui CMS.</p></div><div class="map-card"><div class="map-topline"><span><i class="map-dot"></i> UWAIS FOOD LOCATION</span><span class="map-live-label">GOOGLE MAPS</span></div><div class="map-frame" id="mapFrame"><div class="map-empty"><span class="map-pin-large">⌖</span><strong>Lokasi Uwais Food</strong><p>Alamat/pin Google Maps akan ditampilkan di sini setelah diatur melalui CMS.</p></div></div><div class="map-card-footer"><span>Uwais Food · Tanjungpinang</span><span>Find your way ↗</span></div></div></div></section>
+    <section class="contact-section" id="kontak"><div class="contact-inner page-shell"><div class="contact-orb"></div><div class="contact-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> LET'S MAKE IT SPECIAL</div><h2>Ada yang ingin<br><em>kamu nikmati?</em></h2><p>Untuk tanya produk, pemesanan, atau hampers khusus, kami senang mendengar darimu.</p></div><div class="contact-links"><a class="button button-light" id="whatsappLink" href="https://wa.me/6282221021094" target="_blank" rel="noopener">Hubungi Uwais Food ↗</a><a class="social-link" id="instagramLink" href="https://www.instagram.com/uwaisfood_id/" target="_blank" rel="noopener">Instagram @uwaisfood_id ↗</a><a class="social-link" id="customerLink" href="https://order.uwaisfood.my.id/">Lihat pilihan menu ↓</a></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#home"><span class="brand-mark">U<span>F</span></span><span class="brand-copy"><strong>uwais food</strong><small>HOMEMADE GOODNESS</small></span></a>
-    <span>© <span id="year"></span> Uwais Food. Made with ♡</span>
-    <a href="#home" class="back-top">Kembali ke atas ↑</a>
-  </footer>
-  <div class="toast" id="toast" role="status"></div>
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-symbol"><b>U</b><i>F</i></span><span class="brand-name"><strong>uwais food</strong><small>HOMEMADE GOODNESS</small></span></a><p>Made with love in Tanjungpinang, Kepulauan Riau.</p><div class="footer-right"><span>© <span id="year"></span> Uwais Food</span><a href="#top">Kembali ke atas ↑</a></div></footer>
+  <a class="floating-order" id="floatingOrder" href="https://order.uwaisfood.my.id/" aria-label="Pesan Uwais Food"><span>♡</span><b>Pesan</b></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+  (() => {
+    'use strict';
+    const cfg = window.UWAIS_CONFIG || {};
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+    const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt = n => Number(n || 0) > 0 ? new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n)) : 'Hubungi kami';
+    let products = [], settings = {}, filter = 'all';
+    const waNumber = () => String(settings.whatsappNumber || cfg.whatsappNumber || '').replace(/\D/g,'');
+    function toast(message) { const el=$('#toast'); el.textContent=message; el.classList.add('show'); clearTimeout(toast.timer); toast.timer=setTimeout(()=>el.classList.remove('show'),2400); }
+    function jsonp(url) {
+      return new Promise((resolve,reject)=>{
+        const callback='uwaisCatalog_'+Date.now()+'_'+Math.floor(Math.random()*10000);
+        const script=document.createElement('script'); let done=false;
+        const finish=(err,data)=>{if(done)return;done=true;clearTimeout(timer);delete window[callback];script.remove();err?reject(err):resolve(data)};
+        const timer=setTimeout(()=>finish(new Error('Koneksi katalog melewati batas waktu')),14000);
+        window[callback]=data=>finish(null,data);
+        script.onerror=()=>finish(new Error('Endpoint katalog belum dapat diakses'));
+        script.src=url+(url.includes('?')?'&':'?')+'publicCatalog=1&callback='+encodeURIComponent(callback)+'&v='+Date.now();
+        document.head.appendChild(script);
+      });
+    }
+    const categoryFromName = name => {const s=String(name||'').toLowerCase();if(/cake|cheese cake|dessert/.test(s))return 'cake';if(/hampers|parcel|gift/.test(s))return 'hampers';return 'pastry';};
+    const categoryLabel = c => ({pastry:'Pastry',cake:'Cake & Dessert',hampers:'Hampers'})[c] || 'Produk';
+    function orderUrl(name) {const pwa=settings.customerPwaUrl||cfg.customerPwaUrl;if(pwa)return pwa;const n=waNumber();return n?'https://wa.me/'+n+'?text='+encodeURIComponent('Halo Uwais Food, saya ingin bertanya tentang '+name+'.'):(settings.instagramUrl||cfg.instagramUrl||'#kontak');}
+    function productCard(p) {
+      const name=p.name||p.nama||'', image=p.image||p.gambar||'', category=p.category||categoryFromName(name);
+      const desc=p.description||p.isi||'Dibuat dengan perhatian pada rasa dan kualitas.';
+      const price=p.priceLabel||(Number(p.price||p.harga||0)>0?fmt(p.price||p.harga):'Hubungi kami');
+      const unit=p.unit||p.satuan||'', tag=p.tag||(p.featured?'PILIHAN FAVORIT':'');
+      return '<article class="product-card"><div class="product-image '+(image?'':'placeholder')+'">'+(image?'<img src="'+esc(image)+'" alt="'+esc(name)+'" loading="lazy" onerror="this.remove()">':'')+(tag?'<span class="product-tag">'+esc(tag)+'</span>':'')+'</div><div class="product-info"><span class="product-category">'+esc(categoryLabel(category).toUpperCase())+'</span><h3>'+esc(name)+'</h3><p>'+esc(desc)+'</p><div class="product-bottom"><strong>'+esc(price)+' <small>'+(unit?'/ '+esc(unit):'')+'</small></strong><a class="product-action" href="'+esc(orderUrl(name))+'" target="_blank" rel="noopener" aria-label="Pesan '+esc(name)+'">↗</a></div></div></article>';
+    }
+    function renderProducts() {
+      const visible=products.filter(p=>p.active!==false&&(filter==='all'||(p.category||categoryFromName(p.name||p.nama))===filter));
+      $('#productGrid').innerHTML=visible.length?visible.map(productCard).join(''):'<div class="loading-card">Belum ada produk pada kategori ini.</div>';
+      $('#productCount').textContent=visible.length+' produk tersedia';
+    }
+    function setText(selector,value){if(value!=null&&String(value).trim()!=='')$(selector).textContent=value;}
+    function setLink(selector,url){const el=$(selector);if(el&&url){el.href=url;}}
+    function renderGallery(gallery){
+      if(!Array.isArray(gallery)||!gallery.length)return;
+      const urls=gallery.filter(Boolean).slice(0,6);if(!urls.length)return;
+      $('#galleryGrid').innerHTML=urls.map((url,i)=>'<figure class="gallery-tile '+(i===0?'gallery-tall':'')+'"><img src="'+esc(url)+'" alt="Galeri Uwais Food '+(i+1)+'" loading="lazy"></figure>').join('');
+    }
+    function renderMap(s){
+      const address=s.address||cfg.locationLabel||'Tanjungpinang, Kepulauan Riau';
+      let lat=Number(s.latitude),lng=Number(s.longitude);
+      let valid=Number.isFinite(lat)&&Number.isFinite(lng)&&Math.abs(lat)<=90&&Math.abs(lng)<=180&&s.latitude!==''&&s.longitude!=='';
+      if(!valid&&s.mapsUrl){const m=String(s.mapsUrl).match(/@(-?\d{1,2}\.\d+),\s*(-?\d{1,3}\.\d+)/)||String(s.mapsUrl).match(/!3d(-?\d{1,2}\.\d+)!4d(-?\d{1,3}\.\d+)/);if(m){lat=Number(m[1]);lng=Number(m[2]);valid=true;}}
+      const query=valid?(lat+','+lng):address;
+      const link=s.mapsUrl||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query));
+      setLink('#mapsDirection',link);$('#mapsDirection').target='_blank';$('#mapsDirection').rel='noopener';
+      $('#mapFrame').innerHTML='<iframe title="Peta lokasi Uwais Food" src="https://www.google.com/maps?q='+encodeURIComponent(query)+'&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+      $('#mapNote').textContent=valid?'Peta menggunakan titik koordinat yang disimpan melalui CMS.':'Peta menampilkan pencarian alamat. Tambahkan koordinat pin melalui CMS agar lokasi lebih akurat.';
+    }
+    function applySettings(s){
+      settings=s||{};
+      setText('#announcementText',settings.announcement);
+      setText('#heroEyebrow',settings.heroEyebrow);
+      setText('#heroTitle',settings.heroTitle);
+      setText('#heroAccent',settings.heroAccent);
+      setText('#heroDescription',settings.heroDescription);
+      setText('#aboutTitle',settings.aboutTitle);
+      setText('#aboutText',settings.aboutText);
+      setText('#locationIntro',settings.locationIntro);
+      setText('#storeAddress',settings.address||cfg.locationLabel||'Tanjungpinang, Kepulauan Riau');
+      setText('#storeHours',settings.businessHours||'Hubungi kami untuk informasi jam pelayanan.');
+      if(settings.heroImage)$('#heroImage').src=settings.heroImage;
+      const n=waNumber(), wa=$('#whatsappLink');
+      wa.href=n?'https://wa.me/'+n+'?text='+encodeURIComponent(settings.whatsappMessage||cfg.whatsappMessage||'Halo Uwais Food, saya ingin bertanya.'):(settings.instagramUrl||cfg.instagramUrl||'#kontak');
+      wa.textContent=n?'Chat via WhatsApp ↗':'Hubungi Uwais Food ↗';
+      setLink('#instagramLink',settings.instagramUrl||cfg.instagramUrl);
+      const pwa=settings.customerPwaUrl||cfg.customerPwaUrl;
+      if(pwa){['#customerLink','#headerOrder','#heroOrder','#floatingOrder'].forEach(sel=>setLink(sel,pwa));}
+      const title=settings.seoTitle||'Uwais Food | Homemade Bakery & Hampers';
+      document.title=title;
+      const desc=settings.seoDescription||'Temukan pilihan bakery homemade dan hampers spesial dari Uwais Food, Tanjungpinang.';
+      const meta=$('meta[name="description"]');if(meta)meta.content=desc;
+      renderMap(settings);renderGallery(settings.gallery||[]);
+      if(Array.isArray(settings.visibleProducts)){const allowed=new Set(settings.visibleProducts.map(x=>String(x).toLowerCase()));products=products.filter(p=>allowed.has(String(p.name||p.nama).toLowerCase()));}
+      const featured=new Set((settings.featuredProducts||[]).map(x=>String(x).toLowerCase()));
+      products=products.map(p=>Object.assign({},p,{featured:featured.has(String(p.name||p.nama).toLowerCase())||p.featured}));
+      renderProducts();
+    }
+    $('#productFilters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;$$('.filter-chip').forEach(x=>x.classList.toggle('selected',x===b));renderProducts();});
+    $('#themeToggle').addEventListener('click',()=>{const dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';localStorage.setItem('uwais-theme',dark?'dark':'light');$('#themeToggle').textContent=dark?'☾':'☼';});
+    if(localStorage.getItem('uwais-theme')==='dark'){document.documentElement.dataset.theme='dark';$('#themeToggle').textContent='☾';}
+    $('#menuToggle').addEventListener('click',()=>{document.body.classList.toggle('menu-open');$('#menuToggle').setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false');});
+    $$('.nav-link').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');$$('.nav-link').forEach(x=>x.classList.toggle('active',x===a));}));
+    $('#copyAddress').addEventListener('click',async()=>{const value=settings.address||cfg.locationLabel||'Tanjungpinang, Kepulauan Riau';try{await navigator.clipboard.writeText(value);toast('Alamat berhasil disalin');}catch(_){toast(value);}});
+    $('#year').textContent=new Date().getFullYear();
+    async function init(){
+      try{const data=cfg.catalogUrl?await jsonp(cfg.catalogUrl):null;if(data&&data.success){products=Array.isArray(data.products)?data.products:[];applySettings(data.settings||{});return;}}catch(err){console.warn('Katalog online belum tersedia; memakai data lokal.',err);}
+      try{const r=await fetch('data/products.json',{cache:'no-cache'});if(!r.ok)throw new Error('Katalog lokal tidak tersedia');const data=await r.json();products=data.products||[];}catch(_){products=[];}
+      applySettings({});
+    }
+    init();
+  })();
+  </script>
 </body>
 </html>
