@@ -1,21 +1,17 @@
-/*
- * PENGATURAN WEBSITE UWAIS FOOD
- * Ubah nilai di bawah ini sesuai akun dan integrasi toko.
- * Nomor WhatsApp gunakan format internasional tanpa +, spasi, atau tanda baca.
+/* UWAIS FOOD WEBSITE CONFIG
+ * URL Apps Script publik untuk katalog CMS (akhiran /exec).
+ * Nomor WhatsApp gunakan format internasional tanpa tanda baca.
  */
 window.UWAIS_CONFIG = {
   brandName: "Uwais Food",
-  location: "Tanjungpinang, Kepulauan Riau",
-  instagramUrl: "https://www.instagram.com/uwaisfood_id/",
-  whatsappNumber: "6282221021094", // Contoh: 6281234567890
-  whatsappMessage: "Halo Uwais Food, saya ingin bertanya tentang produk.",
-  customerPwaUrl: "https://order.uwaisfood.my.id/",
-  mapsUrl: "",
-  locationLabel: "Tanjungpinang, Kepulauan Riau",
-  // URL publik Apps Script Admin Uwais Food untuk membaca konten yang sudah dipublikasikan CMS.
-  // Setelah addon WebsiteCMS dipasang dan Apps Script di-deploy, isi URL dasar /exec.
-  // Contoh: https://script.google.com/macros/s/ID_DEPLOYMENT/exec
-  // Kosongkan untuk tetap memakai katalog statis data/products.json.
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbwWcnvTcBJzY4SXIxKY30sPXj31oNapu-nIYPnQWDplQOOb5Xvb8WvT3vcZwGDhVOBpFw/exec",
   catalogUrl: "https://script.google.com/macros/s/AKfycbwWcnvTcBJzY4SXIxKY30sPXj31oNapu-nIYPnQWDplQOOb5Xvb8WvT3vcZwGDhVOBpFw/exec",
-  currency: "IDR"
+  customerPwaUrl: "https://order.uwaisfood.my.id/",
+  whatsappNumber: "6282221021094",
+  whatsappMessage: "Halo Uwais Food, saya ingin bertanya tentang produk.",
+  instagramUrl: "https://www.instagram.com/uwaisfood_id/",
+  locationLabel: "Tanjungpinang, Kepulauan Riau",
+  mapsUrl: "",
+  defaultSeoTitle: "Uwais Food | Homemade Bakery & Hampers",
+  defaultSeoDescription: "Temukan pilihan bakery homemade dan hampers spesial dari Uwais Food, Tanjungpinang."
 };
