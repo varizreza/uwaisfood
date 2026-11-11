@@ -52,13 +52,20 @@
     $('#productCount').textContent=visible.length+' produk tersedia';
   }
   function setText(id,value){if(value!==undefined && value!==null && String(value).trim()!=='')$(id).textContent=value}
+  function setHeroHeading(s){
+    const el=$('#heroTitle');
+    if(!el)return;
+    const lead=String(s.heroTitle || 'Bahagia dimulai dari').trim();
+    const accent=String(s.heroAccent || 'gigitan pertama.').trim();
+    el.replaceChildren(document.createTextNode(lead+(accent?' ':'')));
+    if(accent){const em=document.createElement('em');em.id='heroAccent';em.textContent=accent;el.append(em);}
+  }
   function setLink(id,url){const el=$(id);if(el&&url){el.href=url;el.target='_blank';el.rel='noopener'}}
   function applySettings(s={}){
     settings=s;
     setText('#announcementText',s.announcement);
     setText('#heroEyebrow',s.heroEyebrow);
-    setText('#heroTitle',s.heroTitle);
-    setText('#heroAccent',s.heroAccent);
+    setHeroHeading(s);
     setText('#heroDescription',s.heroDescription);
     setText('#aboutTitle',s.aboutTitle);
     setText('#aboutText',s.aboutText);
@@ -88,31 +95,57 @@
     products=products.map(p=>({...p,featured:featured.has(String(p.name||p.nama).toLowerCase()),tag:featured.has(String(p.name||p.nama).toLowerCase())?'PILIHAN FAVORIT':p.tag}));
     renderProducts();
   }
-  function renderMap(s){
-    const address=s.address || '';
-    const displayAddress=s.address || cfg.locationLabel || 'Tanjungpinang, Kepulauan Riau';
-    $('#storeAddress').textContent=displayAddress;
-    let lat=Number(s.latitude),lng=Number(s.longitude);
-    let validCoords=Number.isFinite(lat)&&Number.isFinite(lng)&&Math.abs(lat)<=90&&Math.abs(lng)<=180&&(s.latitude!==''&&s.longitude!=='');
-    if(!validCoords && s.mapsUrl){
-      const raw=String(s.mapsUrl);
-      const match=raw.match(/@(-?\d{1,2}\.\d+),\s*(-?\d{1,3}\.\d+)/) || raw.match(/!3d(-?\d{1,2}\.\d+)!4d(-?\d{1,3}\.\d+)/);
-      if(match){lat=Number(match[1]);lng=Number(match[2]);validCoords=Number.isFinite(lat)&&Number.isFinite(lng)&&Math.abs(lat)<=90&&Math.abs(lng)<=180;}
+  function renderMap(s={}){
+    const address=String(s.address || '').trim();
+    const rawMapUrl=String(s.mapsUrl || s.mapUrl || cfg.mapsUrl || '').trim();
+    const validHttps=value=>{try{return new URL(value).protocol==='https:'}catch(_){return false}};
+    const readCoord=value=>{
+      if(value===undefined||value===null||String(value).trim()==='')return null;
+      const n=Number(String(value).trim().replace(',','.'));
+      return Number.isFinite(n)?n:null;
+    };
+    let lat=readCoord(s.latitude ?? s.lat);
+    let lng=readCoord(s.longitude ?? s.lng);
+    let validCoords=lat!==null&&lng!==null&&Math.abs(lat)<=90&&Math.abs(lng)<=180;
+
+    // Tautan Google Maps panjang kadang sudah memuat koordinat pin.
+    if(!validCoords&&rawMapUrl){
+      try{
+        const decoded=decodeURIComponent(rawMapUrl);
+        const match=decoded.match(/@(-?\d{1,2}(?:\.\d+)?),\s*(-?\d{1,3}(?:\.\d+)?)/)
+          || decoded.match(/!3d(-?\d{1,2}(?:\.\d+)?)!4d(-?\d{1,3}(?:\.\d+)?)/)
+          || decoded.match(/[?&](?:q|query|ll|center)=(-?\d{1,2}(?:\.\d+)?)[, ]+(-?\d{1,3}(?:\.\d+)?)/i);
+        if(match){
+          const candidateLat=Number(match[1]),candidateLng=Number(match[2]);
+          if(Number.isFinite(candidateLat)&&Number.isFinite(candidateLng)&&Math.abs(candidateLat)<=90&&Math.abs(candidateLng)<=180){
+            lat=candidateLat;lng=candidateLng;validCoords=true;
+          }
+        }
+      }catch(_){}
     }
-    const query=validCoords?`${lat},${lng}`:address;
-    const mapsUrl=s.mapsUrl || (query?'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query):'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Uwais Food Tanjungpinang'));
-    $('#mapsDirection').href=mapsUrl;
-    $('#mapsDirection').target='_blank';$('#mapsDirection').rel='noopener';
+
+    const query=validCoords?lat+','+lng:address;
+    const fallbackSearch='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(address||'Uwais Food Tanjungpinang');
+    const directionUrl=validHttps(rawMapUrl)?rawMapUrl:(query?'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query):fallbackSearch);
+    const displayAddress=address||(validCoords?'Lokasi Uwais Food · titik peta tersimpan':rawMapUrl?'Lihat lokasi melalui Google Maps':(cfg.locationLabel||'Tanjungpinang, Kepulauan Riau'));
+    $('#storeAddress').textContent=displayAddress;
+    const direction=$('#mapsDirection');
+    direction.href=directionUrl;direction.target='_blank';direction.rel='noopener noreferrer';
+
     const note=$('#mapNote');
-    const embed=$('#mapFrame');
+    const frame=$('#mapFrame');
     if(query){
-      const src='https://www.google.com/maps?q='+encodeURIComponent(query)+'&z=16&output=embed';
-      embed.innerHTML=`<iframe title="Peta lokasi Uwais Food" src="${esc(src)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
-      if(validCoords) note.textContent='Peta menggunakan titik koordinat yang disimpan pada CMS.';
-      else note.textContent='Peta menampilkan pencarian alamat. Tambahkan koordinat pin untuk penunjuk lokasi yang lebih akurat.';
-    } else {
-      embed.innerHTML='<div class="map-empty"><span class="map-pin-large">⌖</span><strong>Lokasi Uwais Food</strong><p>Alamat/pin Google Maps akan ditampilkan di sini setelah diatur melalui CMS.</p><a href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Cari di Google Maps ↗</a></div>';
-      note.textContent='Pin lokasi yang tepat dapat diatur melalui CMS.';
+      const src='https://www.google.com/maps?q='+encodeURIComponent(query)+'&z=17&output=embed';
+      frame.innerHTML='<iframe title="Peta lokasi Uwais Food" src="'+esc(src)+'" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+      note.textContent=validCoords?'Peta menampilkan titik koordinat yang tersimpan di CMS.':'Peta menampilkan area berdasarkan alamat CMS. Tambahkan koordinat untuk pin yang lebih presisi.';
+    }else if(validHttps(rawMapUrl)){
+      // Link singkat maps.app.goo.gl tidak mengandung koordinat yang dapat dibaca browser.
+      // Tetap tampilkan status lokasi dan tautan aslinya, bukan membiarkan panel peta kosong.
+      frame.innerHTML='<div class="map-link-state"><span class="map-link-pin">⌖</span><strong>Lokasi Uwais Food sudah ditautkan</strong><p>CMS menyimpan tautan berbagi Google Maps. Buka tautan ini untuk melihat pin lokasi yang tepat.</p><a href="'+esc(directionUrl)+'" target="_blank" rel="noopener noreferrer">Buka lokasi di Google Maps <span>↗</span></a></div>';
+      note.textContent='Tautan lokasi berasal dari CMS. Untuk menampilkan peta langsung di halaman, isi alamat atau koordinat Latitude dan Longitude.';
+    }else{
+      frame.innerHTML='<div class="map-empty"><span class="map-pin-large">⌖</span><strong>Lokasi Uwais Food</strong><p>Atur alamat atau koordinat pin melalui CMS untuk menampilkan peta di sini.</p><a href="'+esc(fallbackSearch)+'" target="_blank" rel="noopener noreferrer">Cari di Google Maps ↗</a></div>';
+      note.textContent='Alamat dan pin lokasi dapat diatur melalui CMS.';
     }
   }
   function renderGallery(gallery){
@@ -127,8 +160,47 @@
   const savedTheme=localStorage.getItem('uwais-theme');if(savedTheme==='dark'){document.documentElement.dataset.theme='dark';$('#themeToggle .theme-icon').textContent='☾'}
   $('#menuToggle').addEventListener('click',()=>{document.body.classList.toggle('menu-open');$('#menuToggle').setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false')});
   $$('.nav-link').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');$$('.nav-link').forEach(x=>x.classList.toggle('active',x===a))}));
-  $('#copyAddress').addEventListener('click',async()=>{const value=settings.address || cfg.locationLabel || 'Tanjungpinang, Kepulauan Riau';try{await navigator.clipboard.writeText(value);toast('Alamat berhasil disalin')}catch(_){toast(value)}});
-  function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2400)}
+  $('#copyAddress').addEventListener('click',async()=>{
+    const value=String(settings.address || settings.mapsUrl || cfg.locationLabel || '').trim();
+    if(!value){toast('Alamat toko belum diatur di CMS.','info');return;}
+    try{
+      if(!navigator.clipboard?.writeText)throw new Error('Clipboard tidak tersedia');
+      await navigator.clipboard.writeText(value);
+      toast('Alamat berhasil disalin.','success');
+    }catch(_){toast('Tidak dapat menyalin otomatis. Silakan salin alamat dari bagian lokasi.','error');}
+  });
+  function toast(message,type='success',options={}){
+    const stack=$('#toastStack');
+    if(!stack)return;
+    const allowed=['success','info','error','warning'];
+    const variant=allowed.includes(type)?type:'info';
+    const duration=Math.max(1800,Number(options.duration)||3400);
+    const icons={success:'✓',info:'i',error:'!',warning:'!'};
+    const el=document.createElement('div');
+    el.className='toast toast-'+variant;
+    el.style.setProperty('--toast-duration',duration+'ms');
+    el.setAttribute('role',variant==='error'?'alert':'status');
+    const icon=document.createElement('span');
+    icon.className='toast-icon';icon.setAttribute('aria-hidden','true');icon.textContent=icons[variant];
+    const text=document.createElement('span');
+    text.className='toast-message';text.textContent=String(message||'');
+    const close=document.createElement('button');
+    close.className='toast-close';close.type='button';close.setAttribute('aria-label','Tutup notifikasi');close.textContent='×';
+    const progress=document.createElement('span');progress.className='toast-progress';progress.setAttribute('aria-hidden','true');
+    el.append(icon,text,close,progress);stack.append(el);
+    let timer;
+    const dismiss=()=>{
+      if(el.dataset.closing)return;
+      el.dataset.closing='1';el.classList.add('toast-leave');
+      clearTimeout(timer);setTimeout(()=>el.remove(),220);
+    };
+    close.addEventListener('click',dismiss);
+    el.addEventListener('mouseenter',()=>clearTimeout(timer));
+    el.addEventListener('mouseleave',()=>{if(!el.dataset.closing)timer=setTimeout(dismiss,duration);});
+    timer=setTimeout(dismiss,duration);
+    while(stack.children.length>4)stack.firstElementChild.remove();
+    return el;
+  }
   $('#year').textContent=new Date().getFullYear();
   async function init(){
     try{
