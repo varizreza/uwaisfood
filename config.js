@@ -9,6 +9,9 @@ window.UWAIS_CONFIG = {
   instagramUrl: "https://www.instagram.com/uwaisfood_id/",
   whatsappNumber: "6282221021094", // Contoh: 6281234567890
   whatsappMessage: "Halo Uwais Food, saya ingin bertanya tentang produk.",
+  customerPwaUrl: "https://order.uwaisfood.my.id/",
+  mapsUrl: "",
+  locationLabel: "Tanjungpinang, Kepulauan Riau",
   // URL publik Apps Script Admin Uwais Food untuk membaca konten yang sudah dipublikasikan CMS.
   // Setelah addon WebsiteCMS dipasang dan Apps Script di-deploy, isi URL dasar /exec.
   // Contoh: https://script.google.com/macros/s/ID_DEPLOYMENT/exec
